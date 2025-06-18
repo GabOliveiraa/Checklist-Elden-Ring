@@ -1,0 +1,99 @@
+header {
+    background-color: transparent;
+    height: 80px;
+    position: fixed;
+}
+
+header .container {
+    height: 100%;
+}
+
+ul.menu-desktop-container {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.menu-desktop-container li {
+    padding: 0 10px;
+}
+
+ul.menu-desktop-container li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Cinzel Decorative";
+}
+
+ul.menu-desktop-container li a:hover{
+    color: #a17a3a;
+}
+
+ul.menu-desktop-container li a.active {
+    color: #a17a3a;
+    font-weight: bold;
+}
+
+.logo {
+    margin-right: 40px;
+}
+
+.logo a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.logo .logo-text {
+    width: 200px;
+    height: auto;
+    z-index: 1;
+}
+
+.logo .logo-icon {
+    position: absolute;
+    width: 50px;
+    height: auto;
+    z-index: 0;
+}
+
+.menu-mobile {
+    display: none;
+}
+
+.menu-mobile ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-mobile li {
+    padding: 5px;
+}
+
+.menu-mobile a {
+    text-decoration: none;
+    color: #a17a3a;
+    font-size: 14px;
+}
+
+
+
+@media screen and (max-width: 992px) {
+    header {
+        height: 50px;
+    }
+
+    .logo .logo-text {
+        width: 60px;
+    }
+
+    .logo {
+        margin-right: 20px;
+    }
+    
+    .menu-mobile {
+        display: block;
+    }
+}
