@@ -21,12 +21,14 @@ html, body {
     font-family: "Cinzel Decorative";
     font-weight: 700;
     color: #a17a3a;
+    text-align: center;
 }
 
 #home h4 {
     font-family: "Roboto";
     font-weight: 100;
     color: #fff;
+    text-align: center;
 }
 
 #home .container {
@@ -57,4 +59,18 @@ html, body {
 #home .option-card:hover {
     background-color: rgba(139, 121, 88, 0.3);
     color: #c2a473;
+}
+
+@media screen and (max-width: 992px) {
+    html, body {
+        height: auto;
+    }
+
+    #home {
+        height: auto;
+    }
+
+    #home .container {
+        gap: 30px;
+    }
 }

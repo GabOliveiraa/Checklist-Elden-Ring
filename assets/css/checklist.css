@@ -1,0 +1,128 @@
+html, body{
+    height: auto;
+    background: #1D120C;
+    background: linear-gradient(13deg,rgba(29, 18, 12, 1) 0%, rgba(110, 80, 66, 1) 0%, rgba(29, 18, 12, 1) 100%, rgba(84, 63, 50, 1) 27%, rgba(56, 34, 24, 1) 60%, rgba(29, 18, 12, 1) 100%);
+}
+
+main{
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+
+main .section-title{
+    text-align: center;
+}
+
+.section-title h1{
+    font-size: 50px;
+    font-family: 'Cinzel Decorative';
+    font-weight: bold;
+    color: #A17A3A;
+}
+
+.section-title p {
+    font-size: 18px;
+    font-family: 'Roboto';
+    font-weight: 200;
+    color: #FFF;
+}
+
+.section-options button{
+    border-radius: 50%;
+    border: none;
+    background-color: #A17A3A;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.section-options button img{
+    width: 20px;
+    height: 20px;
+}
+
+.accordion-button{
+    background-color: #A17A3A;
+    color: #4d3611;
+    font-weight: bold;
+    font-family: 'Cinzel Decorative';
+    position: relative;
+}
+
+.accordion-button .accordion-finished{
+    position: absolute;
+    right: 120px;
+    color: #194331;
+    visibility: hidden;
+}
+
+.accordion-button .accordion-counter{
+    position: absolute;
+    right: 60px;
+}
+
+.accordion-button .accordion-finished.finished{
+    visibility: visible;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #FFF;
+    background-color: #4d3611;
+}
+
+.accordion-button:not(.collapsed) .accordion-finished {
+    color: #FFF;
+}
+
+.accordion-button:not(.collapsed)::after {
+    filter: brightness(0) invert(1);
+}
+
+.accordion-body {
+    background-color: #ffeac9;
+}
+
+.accordion-checkbox-item{
+    padding: 0 10px;
+}
+
+.accordion-checkbox-item .form-check{
+    margin-bottom: 0;
+}
+
+.accordion-links img{
+    width: 30px;
+    height: 30px;
+}
+
+.accordion-links a{
+    margin-left: 5px;
+}
+
+.accordion-checkbox label{
+    font-size: 16px;
+    font-family: 'Roboto';
+}
+
+.form-check-input{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: -2px;
+    margin-right: 10px;
+    }
+
+.form-check-input:checked {
+    background-color: #4d3611 !important;
+    border-color: #4d3611 !important;
+}
+
+@media screen and (max-width: 992px) {
+
+    .accordion-button{
+        font-size: 12px;
+    }
+}

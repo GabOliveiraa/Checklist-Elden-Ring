@@ -33,3 +33,9 @@ footer a {
 footer a:hover {
     color: #a17a3a;
 }
+
+@media screen and (max-width: 992px) {
+    footer {
+        height: 60px;
+    }
+}

@@ -1,0 +1,37 @@
+#contato{
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    padding-bottom: 80px;
+    /* Cor de fundo usando o parâmetro Alpha que controla a opacidade da cor RGB */
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+h1 {
+    font-size: 50px;
+    font-family: "Cinzel Decorative";
+    font-weight: 700;
+    color: #a17a3a;
+}
+
+.contato .form-control {
+    background-color: rgba(255, 234, 201, 0.3);
+    color: #fff;
+    border-color: #a17a3a;
+}
+
+.mb-3 {
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #4d3611;
+    border-color: #4d3611;
+    width: 200px;
+    height: 50px;
+}
+
+.btn-primary:hover, .btn-primary:active {
+    background-color: #695029 !important;
+    border-color: #695029 !important;
+}

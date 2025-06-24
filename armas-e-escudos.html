@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title>Elden Ring Checklist</title>
-
-        <meta charset="UTF-8">
+        <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,12 +10,13 @@
         <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="assets/css/header.css">
-        <link rel="stylesheet" href="assets/css/home.css">
+        <link rel="stylesheet" href="assets/css/checklist.css">
         <link rel="stylesheet" href="assets/css/footer.css">
 
+        <title>Armas | Checklist Elden Ring</title>
     </head>
 
-    <body>
+    <body id="checklist">
         <!-- Header -->
         <header class="container-fluid">
             <div class="container d-flex justify-content-center align-items-center">
@@ -66,55 +65,40 @@
             </div>
         </header>
         <!-- ./ Header -->
-        <main id="home" class="container-fluid">
-            <div class="container d-flex flex-column align-items-center justify-content-center">
+        <!-- Main -->
+        <main class="container-fluid">
+            <!-- Seção de título -->
+            <div class="container">
                 <div class="row">
-                    <div class="col-12 d-flex justify-content-center align-items-center flex-column">
-                        <h1>Elden Ring Checklist</h1>
-                        <h4>Encontre, colecione e organize a sua jornada pelas terras intermédias</h4>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-6 col-lg-3 d-flex justify-content-center">
-                        <div class="option-card">
-                            <a href="armas-e-escudos.html">
-                                <img src="assets/images/weapons.png" alt="Armas">
-                                <h3>Armas</h3>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-lg-3 d-flex justify-content-center">
-                        <div class="option-card">
-                            <a href="armaduras.html">
-                                <img src="assets/images/armor.png" alt="Armaduras">
-                                <h3>Armaduras</h3>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-lg-3 d-flex justify-content-center">
-                        <div class="option-card">
-                            <a href="magias-e-encantamentos.html">
-                                <img src="assets/images/magic.png" alt="Magias">
-                                <h3>Magias</h3>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-lg-3 d-flex justify-content-center">
-                        <div class="option-card">
-                            <a href="talismas.html">
-                                <img src="assets/images/talismans.png" alt="Talismãs">
-                                <h3>Talismãs</h3>
-                            </a>
-                        </div>
+                    <div class="col-12 section-title">
+                        <h1>Armas e Escudos</h1>
+                        <p>Lista completa de armas e escudos, organizadas por categorias.</p>
                     </div>
                 </div>
             </div>
+            <!-- ./ Seção de título -->
+            <br /><br /><br />
+            <!-- Ações -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 section-filter"></div>
+                    <div class="col-6 section-options d-flex justify-content-end align-items-center">
+                        <button id="downloadJson"><img src="assets/images/download.png" /></button>
+                        <button id="uploadJson"><img src="assets/images/upload.png" /></button>
+                        <input type="file" id="arquivo" accept=".json" style="display: none;" />
+                    </div>
+                </div>
+            </div>
+            <!-- ./ Ações -->
+            <br/>
+            <!-- Acordeão de itens -->
+            <div class="container">
+                <div class="accordion" id="checklistWeapons"></div>
+            </div>
+            <!-- ./ Acordeão de itens-->
         </main>
-
+        <!-- ./ Main-->
+        <!-- Footer -->
         <footer class="container-fluid">
             <div class="container">
 
@@ -130,7 +114,9 @@
                 </div>
             </div>
         </footer>
-
+        <!-- ./ Footer-->
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="/assets/js/checklist-armas.js"></script>
+        <script type="text/javascript" src="/assets/js/baixar-carregar.js"></script>
     </body>
 </html>

@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="assets/css/header.css">
         <link rel="stylesheet" href="assets/css/home.css">
         <link rel="stylesheet" href="assets/css/footer.css">
+        <link rel="stylesheet" href="assets/css/contato.css">
 
     </head>
 
@@ -66,55 +67,58 @@
             </div>
         </header>
         <!-- ./ Header -->
-        <main id="home" class="container-fluid">
-            <div class="container d-flex flex-column align-items-center justify-content-center">
+        <!-- Main-->
+        <main class="container-fluid" id="contato">
+            <div class="container">
                 <div class="row">
                     <div class="col-12 d-flex justify-content-center align-items-center flex-column">
-                        <h1>Elden Ring Checklist</h1>
-                        <h4>Encontre, colecione e organize a sua jornada pelas terras intermédias</h4>
+                        <h1>Contato</h1>
                     </div>
                 </div>
-
+                <br>
                 <div class="row">
-                    <div class="col-6 col-lg-3 d-flex justify-content-center">
-                        <div class="option-card">
-                            <a href="armas-e-escudos.html">
-                                <img src="assets/images/weapons.png" alt="Armas">
-                                <h3>Armas</h3>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-lg-3 d-flex justify-content-center">
-                        <div class="option-card">
-                            <a href="armaduras.html">
-                                <img src="assets/images/armor.png" alt="Armaduras">
-                                <h3>Armaduras</h3>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-lg-3 d-flex justify-content-center">
-                        <div class="option-card">
-                            <a href="magias-e-encantamentos.html">
-                                <img src="assets/images/magic.png" alt="Magias">
-                                <h3>Magias</h3>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-lg-3 d-flex justify-content-center">
-                        <div class="option-card">
-                            <a href="talismas.html">
-                                <img src="assets/images/talismans.png" alt="Talismãs">
-                                <h3>Talismãs</h3>
-                            </a>
-                        </div>
+                    <div class="col-12">
+                        <form method="POST" class="contato" action="">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label for="nome" class="form-label">Nome</label>
+                                        <input type="text" class="form-control" id="nome" placeholder="Nome">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label for="sobrenome" class="form-label">Sobrenome</label>
+                                        <input type="text" class="form-control" id="sobrenome" placeholder="Sobrenome">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">E-mail</label>
+                                        <input type="email" class="form-control" id="email" placeholder="nome@exemple.com">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label for="id" class="form-label">ID (Steam, PSN, Xbox)</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nickname">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="informe-o-problema" class="form-label">Informe o problema:</label>
+                                <textarea class="form-control" id="informe-o-problema" rows="3"></textarea>
+                            </div>
+                            <button type="button" class="btn btn-primary">Enviar</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </main>
-
+        <!-- ./ Main-->
+        <!-- Footer -->
         <footer class="container-fluid">
             <div class="container">
 
@@ -130,7 +134,7 @@
                 </div>
             </div>
         </footer>
-
+        <!-- ./ Footer -->
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
