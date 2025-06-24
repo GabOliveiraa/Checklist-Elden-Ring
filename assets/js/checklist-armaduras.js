@@ -1,4 +1,4 @@
-/* Objeto com a lista de Armas */
+/* Objeto com a lista de Armaduras */
 const armaduras = {
     "capacetes": [
         { chave: 'capacetes-1', nome: 'Capuz de Pajem Maior', categoria: 'Capacetes' },
@@ -86,21 +86,22 @@ const armaduras = {
     ],
 };
 
-/* Função para carregar o checklist a partir do objeto */
+// Essa função pega as armaduras da lista e cria os checkboxes para marcar cada uma na tela
 function carregarChecklist(lista) {
 
-    // Inicializa uma variável para concatenar os acordeões
+    // Inicializa uma variável para concatenar os acordeões (juntar todo o conteúdo para mostrar depois)
     var checklist = '';
 
-    // Percorre o objeto de armas
+    // Percorre o objeto de armaduras
     for (let categoria in lista) {
         
         // Pega os items do objeto
-        let items = lista[categoria];
+        let items = lista[categoria]; // Percorre cada grupo de armadura dentro da lista
 
         // Inicializa a variável que vai concatenar as opções e a que vai ficar com o nome da categoria
-        var opcoes = '';
-        var nomeCategoria = '';
+        var opcoes = ''; // Cria o checkbox e armazena o que foi marcado
+        var nomeCategoria = ''; // Guarda o nome da categoria (ex: capacetes)
+
 
         // Percorre a lista de opções
         for (let i = 0; i < items.length; i++) {
@@ -154,15 +155,16 @@ function atualizarContadores() {
     const categorias = document.querySelectorAll(".accordion-item");
 
     categorias.forEach((categoriaItem) => {
-        const categoria = categoriaItem.id.replace("-key", "");
-        const checkboxes = categoriaItem.querySelectorAll('.form-check-input');
-        const total = checkboxes.length;
-        let marcados = 0;
+        const categoria = categoriaItem.id.replace("-key", ""); // Pega o id do item e remove o “-key”.
+        const checkboxes = categoriaItem.querySelectorAll('.form-check-input'); // Dentro de cada categoria, ele procura todos os inputs do tipo checkbox
+        const total = checkboxes.length; // Conta quantos checkboxes existem naquela categoria.
+        let marcados = 0; // Cria uma variável para contar quantos desses checkboxes já foram marcados
 
+        // Conta quantos já estão marcados
         checkboxes.forEach((c) => {
             if (c.checked) marcados++;
         });
-
+        // Atualiza os números
         const contadorSpan = categoriaItem.querySelector('.accordion-counter .checked');
         const finalizadoSpan = categoriaItem.querySelector('.accordion-finished');
 
@@ -178,7 +180,7 @@ function atualizarContadores() {
 /* Função para marcar os itens no checklist, atualizar o contador e mostrar quando a lista estiver finalizada */
 function marcarChecklist() {
     const checkboxes = document.querySelectorAll('.form-check-input');
-    const checklistSalvo = JSON.parse(localStorage.getItem("checklist") || "{}");
+    const checklistSalvo = JSON.parse(localStorage.getItem("checklist") || "{}"); // Carrega as marcações salvas
 
     // Marca os que estavam salvos
     checkboxes.forEach((checkbox) => {
@@ -199,18 +201,20 @@ function marcarChecklist() {
             const categoria = checkbox.dataset.categoria;
             const chave = checkbox.value;
 
+             // Se a categoria ainda não existe, cria ela
             if (!checklistSalvo[categoria]) {
                 checklistSalvo[categoria] = [];
             }
 
             if (checkbox.checked) {
+                // Se estiver marcado, adiciona na lista salva
                 if (!checklistSalvo[categoria].includes(chave)) {
                     checklistSalvo[categoria].push(chave);
                 }
             } else {
                 checklistSalvo[categoria] = checklistSalvo[categoria].filter((v) => v !== chave);
             }
-
+            // Salva tudo no navegador
             localStorage.setItem("checklist", JSON.stringify(checklistSalvo));
             atualizarContadores();
         });
