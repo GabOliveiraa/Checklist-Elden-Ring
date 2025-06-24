@@ -83,13 +83,13 @@
                                 <div class="col-6">
                                     <div class="mb-3">
                                         <label for="nome" class="form-label">Nome</label>
-                                        <input type="text" class="form-control" id="nome" placeholder="Nome">
+                                        <input type="text" class="form-control" id="nome" placeholder="Nome" required >
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="mb-3">
                                         <label for="sobrenome" class="form-label">Sobrenome</label>
-                                        <input type="text" class="form-control" id="sobrenome" placeholder="Sobrenome">
+                                        <input type="text" class="form-control" id="sobrenome" placeholder="Sobrenome" required >
                                     </div>
                                 </div>
                             </div>
@@ -97,22 +97,49 @@
                                 <div class="col-6">
                                     <div class="mb-3">
                                         <label for="email" class="form-label">E-mail</label>
-                                        <input type="email" class="form-control" id="email" placeholder="nome@exemple.com">
+                                        <input type="email" class="form-control" id="email" placeholder="nome@exemple.com" required >
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="mb-3">
                                         <label for="id" class="form-label">ID (Steam, PSN, Xbox)</label>
-                                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nickname">
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nickname" required >
                                     </div>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="informe-o-problema" class="form-label">Informe o problema:</label>
-                                <textarea class="form-control" id="informe-o-problema" rows="3"></textarea>
+                                <textarea class="form-control" id="informe-o-problema" rows="3" required ></textarea>
                             </div>
-                            <button type="button" class="btn btn-primary">Enviar</button>
+                            <button id="enviarFormulario" type="button" class="btn btn-primary">Enviar</button>
                         </form>
+                    </div>
+                </div>
+
+                <br><br >
+
+                <div class="row">
+                    <div class="col-12">
+                        <table style="width: 100%; border-collapse: collapse; color:#FFFFFF">
+                            <tbody>
+                                <tr>
+                                    <td style="border: 1px solid #FFFFFF; padding: 8px;">Site desenvolvido por</td>
+                                    <td style="border: 1px solid #FFFFFF; padding: 8px;">Gabriel Oliveira</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #FFFFFF; padding: 8px;">Jogo</td>
+                                    <td style="border: 1px solid #FFFFFF; padding: 8px;">Elden Ring</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #FFFFFF; padding: 8px;">Desenvolvedora</td>
+                                    <td style="border: 1px solid #FFFFFF; padding: 8px;">From Software</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #FFFFFF; padding: 8px;">Distribuído por</td>
+                                    <td style="border: 1px solid #FFFFFF; padding: 8px;">Bandai Namco</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -136,5 +163,24 @@
         </footer>
         <!-- ./ Footer -->
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+
+                const botaoEnviar = document.getElementById('enviarFormulario')
+                const form = document.querySelector(".contato");
+
+                botaoEnviar.addEventListener("click", function() {
+                    // verifica se os campos não estão vazios
+                    if (form.checkValidity()) {
+                        alert("Enviado com sucesso!");
+                        form.reset(); // limpa o formulário
+                    } else {
+                        // mostra o campo que precisa ser preenchido
+                        form.reportValidity();
+                    }
+                });
+            
+            });
+        </script>
     </body>
 </html>
