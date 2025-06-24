@@ -40,22 +40,25 @@ function upload() {
         document.getElementById("arquivo").click();
     });
 
-    // Quando o usuário escolher um arquivo
+    // Quando um arquivo for selecionado (change = mudança no input), executa a função abaixo
     document.getElementById("arquivo").addEventListener("change", function (event) {
         const file = event.target.files[0]; // Pega o arquivo selecionado
 
-        // Se nenhum arquivo foi escolhido, não faz nada
+        // Se nenhum arquivo foi selecionado, a função para aqui
         if (!file) return;
 
         const reader = new FileReader(); // Ferramenta para ler o conteúdo do arquivo
 
-        // Quando terminar de ler o arquivo
+        // O try tenta executar o código que pode dar erro (como ler ou converter o arquivo)
+        // Se der algum problema, o catch evita que o site trave e mostra uma mensagem de erro
+
+        // Quando o arquivo terminar de ser lido, essa função é chamada
         reader.onload = function (e) {
             try {
-                // Tenta transformar o conteúdo do arquivo em dados utilizáveis
+                 // Tenta transformar o conteúdo do arquivo (texto JSON) em objeto JavaScript
                 const json = JSON.parse(e.target.result);
 
-                // Salva esses dados no navegador (localStorage)
+                // Salva esses dados no navegador (localStorage) com a chave "checklist"
                 localStorage.setItem("checklist", JSON.stringify(json));
 
                 alert("Checklist importado com sucesso!");
@@ -63,7 +66,7 @@ function upload() {
                 // Recarrega a página para mostrar os dados atualizados
                 location.reload();
             } catch (error) {
-                // Se o conteúdo do arquivo estiver errado, avisa o usuário
+                // Se der algum erro (como arquivo inválido ou formato incorreto), mostra uma mensagem de erro
                 alert("Erro ao importar arquivo.");
             }
         };
